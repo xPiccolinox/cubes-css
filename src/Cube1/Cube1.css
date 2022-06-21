@@ -1,17 +1,16 @@
 #cube {
   position: relative;
-  /* background-color: green; */
   width: 300px;
   height: 300px;
   left: -400px;
   transform: rotateX(-20deg) rotateY(30deg);
   transform-style: preserve-3d;
-  /* animation: cube-rotation 10s infinite linear; */
+  animation: cube-rotation 10s infinite linear;
 }
-/* @keyframes cube-rotation {
+@keyframes cube-rotation {
   0% {transform: rotateX(-20deg) rotateY(0deg)}
   100% {transform: rotateX(-20deg) rotateY(360deg)}
-} */
+}
 #cube .cubeSide:nth-child(1) {--i: 0}
 #cube .cubeSide:nth-child(2) {--i: 1}
 #cube .cubeSide:nth-child(3) {--i: 2}
