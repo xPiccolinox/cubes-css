@@ -3,7 +3,7 @@
   width: 300px;
   height: 300px;
   /* left: -400px; */
-  transform: rotateX(-20deg) rotateY(45deg);
+  transform: rotateX(-20deg);
   transform-style: preserve-3d;
   /* animation: cube-rotation 10s infinite linear; */
   user-select: none;
@@ -24,10 +24,15 @@
   height: 100%;
   border: 8px solid black;
   box-sizing: border-box;
+  animation: cube-color-hue 6s infinite linear;
+}
+@keyframes cube-color-hue {
+  0% {filter: hue-rotate(0deg)}
+  100% {filter: hue-rotate(360deg)}
 }
 #cube .cubeSide {
-  background: linear-gradient(yellow, red);
-  transform: rotateY(calc(90deg * var(--i))) translateZ(150px); 
+  background: linear-gradient(yellow, lime);
+  transform: rotateY(calc(90deg * var(--i))) translateZ(148.5px); 
 }
 #cube #cubeTop {
   background-color: yellow;
