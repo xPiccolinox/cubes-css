@@ -3,7 +3,7 @@
   width: 300px;
   height: 300px;
   /* left: -400px; */
-  transform: rotateX(-20deg);
+  /* transform: rotateX(-20deg); */
   transform-style: preserve-3d;
   /* animation: cube-rotation 10s infinite linear; */
   user-select: none;
