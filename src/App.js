@@ -7,9 +7,7 @@ function App() {
   const [cursorGrabbingCube, setCursorGrabbingCube] = useState(false)
   const [cursorCurrentPosition, setCursorCurrentPosition] = useState([0, 0])
   const [cursorGrabPosition, setCursorGrabPosition] = useState([0, 0])
-  const [cubeLastRotation, setCubeLastRotation] = useState([0, 0])
-
-  console.log(cubeLastRotation)
+  const [cubeLastRotation, setCubeLastRotation] = useState([30, -30])
 
   const handleOnMouseOver = () => {
     setCursorOverCube(true)

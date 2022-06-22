@@ -3,7 +3,7 @@
   width: 300px;
   height: 300px;
   /* left: -400px; */
-  /* transform: rotateX(-20deg); */
+  transform: rotateX(-30deg) rotateY(30deg);
   transform-style: preserve-3d;
   /* animation: cube-rotation 10s infinite linear; */
   user-select: none;
@@ -16,10 +16,19 @@
 #cube .cubeSide:nth-child(2) {--i: 1}
 #cube .cubeSide:nth-child(3) {--i: 2}
 #cube .cubeSide:nth-child(4) {--i: 3}
-#cube div {
+#cube > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+#cube div div {
+  position: absolute;
   width: 100%;
   height: 100%;
   border: 8px solid black;
@@ -30,15 +39,42 @@
   0% {filter: hue-rotate(0deg)}
   100% {filter: hue-rotate(360deg)}
 }
+/* Don't ask why I didn't just make it in JS */
+#cube div h2:nth-child(2) { --i: 0px }
+#cube div h2:nth-child(3) { --i: 1px }
+#cube div h2:nth-child(4) { --i: 2px }
+#cube div h2:nth-child(5) { --i: 3px }
+#cube div h2:nth-child(6) { --i: 4px }
+#cube div h2:nth-child(7) { --i: 5px }
+#cube div h2:nth-child(8) { --i: 6px }
+#cube div h2:nth-child(9) { --i: 7px }
+#cube div h2:nth-child(10) { --i: 8px }
+#cube div h2:nth-child(11) { --i: 9px }
+#cube div h2:nth-child(12) { --i: 10px }
+#cube div h2:nth-child(13) { --i: 11px }
+#cube div h2:nth-child(14) { --i: 12px }
+#cube div h2:nth-child(15) { --i: 13px }
+#cube div h2 {
+  position: absolute;
+  font-size: 80px;
+  font-weight: 700;
+  transform: translateZ(calc((var(--i) / 2) + 50px));
+}
 #cube .cubeSide {
+  transform: rotateY(calc(90deg * var(--i))) translateZ(148.5px);
+}
+#cube .cubeSide div {
   background: linear-gradient(yellow, lime);
-  transform: rotateY(calc(90deg * var(--i))) translateZ(148.5px); 
 }
 #cube #cubeTop {
+  transform: rotateX(90deg) translateZ(148.5px);
+}
+#cube #cubeTop div {
   background-color: yellow;
-  transform: rotateX(90deg) translateZ(150px); 
 }
 #cube #cubeBottom {
-  background-color: red;
-  transform: rotateX(-90deg) translateZ(150px); 
+  transform: rotateX(-90deg) translateZ(148.5px);
+}
+#cube #cubeBottom div {
+  background-color: lime;
 }
